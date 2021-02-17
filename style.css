@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  body { 
+    text-align: center;
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    
+  }
+
+  .glitch {
+    font-family: 'Big Shoulders Inline Text', cursive;
+    font-size: 7rem;
+    color: snow;
+    letter-spacing: 0.5rem;
+    position: relative;
+    border-bottom: 5px solid whitesmoke;
+    border-style: ridge;
+    margin-bottom: 1%;
+
+    /* text-shadow: 
+    0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75); */
+
+    /* animation: glitch 0.5s infinite; */
+    /* animation-delay: 10s; */
+  }
+
+.glitch span {
+  position: absolute;
+  /* top: 100;
+  left: 100; */
+}
+
+.glitch span:first-child {
+  animation: glitch 0.65s infinite, pause 5s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 45%);
+  transform: translate( -0.05em, -0.025em);
+  opacity: 0.8;
+}
+
+.glitch span:last-child {
+  animation: glitch 0.375s infinite, pause 5s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
+  transform: translate( 0.0125em, 0.025em);
+  opacity: 0.8;
+}
+
+  @keyframes glitch {
+    0% {
+    text-shadow: 
+    0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75)
+  }
+    14% {
+    text-shadow: 
+    0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+    -0.025em 0.05em 0 rgba(0, 0, 255, 0.75)
+  }
+    15% {
+    text-shadow: 
+    -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+    0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+    -0.05em -0.05em 0 rgba(0, 0, 255, 0.75)
+  }
+    49% {
+    text-shadow: 
+    -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+    0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+    -0.05em -0.05em 0 rgba(0, 0, 255, 0.75)
+  }
+    50% {
+    text-shadow: 
+    0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+    0.05em 0 0 rgba(0, 255, 0, 0.75),
+    0 -0.05em 0 rgba(0, 0, 255, 0.75)
+  }
+    99% {
+    text-shadow: 
+    0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75)
+  }
+    100% {
+    text-shadow: 
+    0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 0, 255, 0.75)
+  }
+  }
+
+  @keyframes pause {
+    0% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 0;
+    }
+    90.1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .round-result {
+    font-size: 4rem;
+    font-family: 'Pangolin', cursive;
+  }
+  
+  #background-city {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0% 15%;
+    border: solid 4px black;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* min-height: 500px; */
+  }
+  
+  #background-city img{  
+    height: 25rem;
+  }
+
+  #cup1-image {
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: bottom;
+    padding-top: 30vh;
+
+    animation-name: "";
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-play-state: running;
+  }
+
+  #cup2-image {
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: bottom;
+    padding-top: 30vh;
+
+    animation-name: "";
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-play-state: running;
+  }
+
+  #cup3-image {
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: bottom;
+    padding-top: 30vh;
+
+    animation-name: "";
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-play-state: running;
+  }
+
+  @keyframes liftcup {
+    0% {
+      padding-top: 30vh;
+    }
+    50% {
+      padding-top: 15vh;
+    }
+    100% {
+      padding-top: 30vh;
+    }
+  }
+
+  .info-wrap {
+    font-family: 'Pangolin', cursive;
+    font-size: 2rem;
+    padding: 1%;
+  }
+
+  #bet  {
+    margin-bottom: -0.2%;
+    font-size: 1.25rem;
+  }
+
+  #enter-bet {
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+  
+  .cash img {
+   height: 70px;
+   width: 80px;
+   text-align: left 
+  }
+
+ #final-result{
+   position: fixed;
+   width: 100%;
+   background-color: black;
+   color: blanchedalmond;
+ }
+
+ a {
+   color: white;
+ }
+
+ #location {
+  padding: 0.5%;
+  font-size: 1.25rem;
+  background-color: black;
+  color: blanchedalmond;
+}

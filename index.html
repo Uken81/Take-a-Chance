@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Hobo Balls</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@600&family=Pangolin&display=swap');
+    </style> 
+  <script type="text/javascript" src="/hoboscript.js" async></script>
+</head>
+<body onload="ballPlacement()">
+  
+    <p class="glitch">
+      <span aria-hidden="true">Hobo Balls</span><span aria-hidden="true">Hobo Balls</span>Hobo Balls</p>
+  
+  <div class="round-result">
+    <p id="show-round-result"></p>
+  </div>
+  <div id="background-city">
+    <div class="cups" id="cup1-image">
+      <img  src="/cup1.png">
+    </div>
+    <div class="cups" id="cup2-image">
+      <img src="/cup2.png">
+    </div>
+    <div class="cups" id="cup3-image">
+      <img src="/cup3.png">
+    </div>
+  </div>
+  <br>
+  <div class="info-wrap">
+    <div id="final-result"></div>
+    <div class="bet-info">
+      <label for="bet">Place Your Bet</label>
+      <input name="bet" id="bet" type="number" min="1" max="400" value="1" />
+      <input id="enter-bet" type="submit" value="Enter Bet" />
+      <p id="show-bet"></p>
+    </div>
+    <p id="cash">You have $40 remaining</p>
+    <button id="location">Change Location</button>
+  </div>
+</body>
+
+</html>
