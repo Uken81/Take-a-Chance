@@ -9,6 +9,8 @@ When player loses it does not show the animation for final cup reveal but instea
 
 ---Future Improvements---
 
+Make location BG random on start.
+
 Create either pop-up at onload or link to instructions for playing the game. Also add brief story to why character is playing.
 
 Alow player to enter bet by pressing enter.
