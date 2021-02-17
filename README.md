@@ -15,6 +15,8 @@ Alow player to enter bet by pressing enter.
 
 Create option for Easy, Medium and hard versions of game which change cash needed to win.
 
+Sound effects on reveal??? maybe random and occasional??
+
 Fix General Aesthetic:
 
 Shorten bet input field. Make buttons look better. Make glitch effect on heading interval longer and more random with the duration. Remove side borders on heading. On lose screen the bachground of text is uneven, its full on right side not on left.
