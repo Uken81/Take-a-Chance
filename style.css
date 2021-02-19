@@ -6,7 +6,7 @@
 
 body {
   text-align: center;
-  background: radial-gradient(90% 60% at 50% 50%, rgba(255, 255, 255, 0) 60%, #000851 93.7%), no-repeat #1CB5E0;
+  background: radial-gradient(90% 60% at 50% 80%, rgba(255, 255, 255, 0) 60%, #000851 93.7%), no-repeat #1CB5E0;
   max-height: 100%;
   overflow-y: hidden;
 }
@@ -28,7 +28,8 @@ body {
   height: 850px;
   margin-top: 30%;
   border: solid 10px black;
-  background-color: dimgrey;
+  box-shadow: rgba(218, 183, 183, 0.35) 10px 10px 15px;
+  background-color: rgb(32, 28, 28);
 }
 
 .image-box {
@@ -40,20 +41,27 @@ body {
 }
 
 .text-box {
-  
   height: 50%;
   text-align: center;
   font-size: 1.5em;
+  font-weight: bold;
+  color: azure;
+  text-shadow:  0px 2px 3px rgb(116, 22, 22);
 }
 
 .text-box p {
-  padding: 10%;
+  padding: 5%;
 }
 
 #story-card-1 {
   grid-row: 1 / span 2;
   grid-column: 2 / span 2;
 }
+
+/* #story-card-2 {
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 2;
+} */
 
 #continue {
   height: 50px;
@@ -62,6 +70,8 @@ body {
   background-color: black;
   color: white;
   margin: 1%;
+  font-size: 1.10em;
+  text-shadow:  3px 2px 3px rgb(116, 22, 22);
   
 }
 
