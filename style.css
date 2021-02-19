@@ -6,7 +6,7 @@
 
 body {
   text-align: center;
-  background: radial-gradient(90% 60% at 50% 80%, rgba(255, 255, 255, 0) 60%, #000851 93.7%), no-repeat #1CB5E0;
+  background: radial-gradient(90% 60% at 50% 80%, rgba(255, 255, 255, 0) 60%, #000000 93.7%), no-repeat #1CB5E0;
   max-height: 100%;
   overflow-y: hidden;
 }
@@ -34,10 +34,14 @@ body {
 
 .image-box {
   height:70%;
-  background-image: url("/intro1.png");
+  /* background-image: url("/intro1.png"); */
   background-size: cover;
   background-repeat: no-repeat;
   border-bottom: solid 10px black;
+}
+
+#image-box-1 {
+  background-image: url("/intro1.png");
 }
 
 .text-box {
@@ -58,12 +62,12 @@ body {
   grid-column: 2 / span 2;
 }
 
-/* #story-card-2 {
+#story-card-2 {
   grid-row: 1 / span 2;
   grid-column: 2 / span 2;
-} */
+}
 
-#continue {
+button {
   height: 50px;
   width: 150px;
   border-radius: 16px;
@@ -71,8 +75,7 @@ body {
   color: white;
   margin: 1%;
   font-size: 1.10em;
-  text-shadow:  3px 2px 3px rgb(116, 22, 22);
-  
+  text-shadow:  3px 2px 3px rgb(116, 22, 22);  
 }
 
 .glitch {
