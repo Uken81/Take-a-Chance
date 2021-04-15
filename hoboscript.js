@@ -1,3 +1,46 @@
+//Event listeners for intro story progression.
+document.getElementById('continue-1').addEventListener("click", function() {
+  const story = document.getElementById('story-card-1');
+  story.style.zIndex = "0";
+})
+
+document.getElementById('continue-2').addEventListener("click", function() {
+  const story = document.getElementById('story-card-2');
+  story.style.zIndex = "0";
+})
+
+document.getElementById('continue-3').addEventListener("click", function() {
+  const story = document.getElementById('story-card-3');
+  story.style.zIndex = "0";
+})
+
+document.getElementById('continue-4').addEventListener("click", function() {
+  const story = document.getElementById('story-card-4');
+  story.style.zIndex = "0";
+})
+
+document.getElementById('continue-5').addEventListener("click", function() {
+  const story = document.getElementById('story-card-5');
+  story.style.zIndex = "0";
+})
+
+document.getElementById('continue-6').addEventListener("click", function() {
+  const story = document.getElementById('story-card-6');
+  story.style.zIndex = "0";
+})
+
+document.getElementById('continue-7').addEventListener("click", function() { 
+  const story = Array.from(document.getElementsByClassName('story-cards')); 
+  console.log(story[2]);
+  story.forEach(function (entry) {
+entry.style.opacity = 0;
+  })
+
+  
+})
+
+
+
 let playerBet = 1;
 let playerCash = 40;
 
