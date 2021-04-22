@@ -251,11 +251,11 @@ function runAnimation(cupName) {
 //Determines final win or loss conditions
 const finalResult = () => {
   if (playerCash <= 0) {
-    document.getElementById('final-result').innerHTML = "You have lost all your money!<br>You can not afford your rent tomorrow<br>Im sure you will make a great Hobo though<br>.....good luck.<br><br><a href='/index.html'>Try Again??</a>";
+    document.getElementById('final-result').innerHTML = "You have lost all your money!<br>You can not afford your rent tomorrow<br>Im sure you will make a great Hobo though<br>.....good luck.<br><br><a href='/game.html'>Try Again??</a>";
     backgroundCity.style.backgroundImage = "url(/losescreen.jpg)";
     allCupImages.forEach(removeCups);
   } else if (playerCash >= winCondition) {
-    document.getElementById('final-result').innerHTML = "Congratulations!<br>You can now afford your rent<br>.....or maybe you should double your money and buy that fancy coffee machine you always wanted.<br><br><a href='/index.html'>Play Again??</a>";
+    document.getElementById('final-result').innerHTML = "Congratulations!<br>You can now afford your rent<br>.....or maybe you should double your money and buy that fancy coffee machine you always wanted.<br><br><a href='/game.html'>Play Again??</a>";
     backgroundCity.style.backgroundImage = "url(/winscreen.jpg)";
     allCupImages.forEach(removeCups);
   }

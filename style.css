@@ -157,7 +157,7 @@ a:link {
   color: snow;
   letter-spacing: 0.5rem;
   position: relative;
-  margin-bottom: 1%;
+  /* margin-bottom: 1%; */
 
   /* text-shadow: 
     0.05em 0 0 rgba(255, 0, 0, 0.75),
@@ -257,11 +257,6 @@ a:link {
   }
 }
 
-.round-result {
-  font-size: 4rem;
-  font-family: 'Pangolin', cursive;
-}
-
 #background-city {
   display: flex;
   justify-content: space-evenly;
@@ -328,20 +323,41 @@ a:link {
 
 .info-wrap {
   font-family: 'Pangolin', cursive;
-  font-size: 2rem;
+  font-size: 3.75rem;
   padding: 1%;
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+}
+
+#bet-container {
+  grid-row: 1 / span 3;
+  grid-column: 1 / span 2; 
 }
 
 #bet {
-  margin-bottom: -0.2%;
-  font-size: 1.25rem;
+ 
+  font-size: 2rem;
+  height: 18%;
+  margin-bottom: 1%;
 }
 
 #enter-bet {
   background-color: black;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5rem;
+}
+
+.round-result {
+  font-size: 4rem;
+  font-family: 'Pangolin', cursive;
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 2;
+}
+
+#cash-info{
+  grid-row: 1 / span 2;
+  grid-column: 5 / span 2;
 }
 
 .cash img {
@@ -366,4 +382,5 @@ a {
   font-size: 1.25rem;
   background-color: black;
   color: blanchedalmond;
+  float: right;
 }
