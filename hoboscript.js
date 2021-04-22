@@ -223,7 +223,7 @@ document.getElementById("cup2-image").addEventListener("click", function () {
   document.getElementById("cash").innerHTML = "You have $" + playerCash + " remaining";
   finalResult();
 });
-
+//testtesttest
 //cup3
 document.getElementById("cup3-image").addEventListener("click", function () {
   playerGuess = 'cup3';
