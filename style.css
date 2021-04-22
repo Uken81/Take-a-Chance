@@ -101,6 +101,17 @@ body {
   z-index: 3;
 }
 
+#instructions-container {
+  background-color: black;
+  color: azure;
+  padding: 5%;
+  font-size: 1.5em;
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 2; 
+  opacity: 0;
+  z-index: 0;
+}
+
 button {
   height: 50px;
   width: 150px;
@@ -124,7 +135,7 @@ a:link {
   grid-row: 2 / span 1;
   grid-column: 2 / span 2; 
   margin-left: 2%;
-  z-index: 0;
+  z-index: 1;
 } 
 
 #intro-buttons {
