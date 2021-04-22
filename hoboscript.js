@@ -1,44 +1,118 @@
 //Event listeners for intro story progression.
-document.getElementById('continue-1').addEventListener("click", function() {
-  const story = document.getElementById('story-card-1');
-  story.style.zIndex = "0";
-})
-
-document.getElementById('continue-2').addEventListener("click", function() {
-  const story = document.getElementById('story-card-2');
-  story.style.zIndex = "0";
-})
-
-document.getElementById('continue-3').addEventListener("click", function() {
-  const story = document.getElementById('story-card-3');
-  story.style.zIndex = "0";
-})
-
-document.getElementById('continue-4').addEventListener("click", function() {
-  const story = document.getElementById('story-card-4');
-  story.style.zIndex = "0";
-})
-
-document.getElementById('continue-5').addEventListener("click", function() {
-  const story = document.getElementById('story-card-5');
-  story.style.zIndex = "0";
-})
-
-document.getElementById('continue-6').addEventListener("click", function() {
-  const story = document.getElementById('story-card-6');
-  story.style.zIndex = "0";
-})
-
-document.getElementById('continue-7').addEventListener("click", function() { 
-  const story = Array.from(document.getElementsByClassName('story-cards')); 
-  console.log(story[2]);
-  story.forEach(function (entry) {
-entry.style.opacity = 0;
+let winCondition;
+if (document.body.id === 'intro-page') {
+  console.log('intro');
+  document.getElementById('continue-1').addEventListener("click", function() {
+    const story = document.getElementById('story-card-1');
+    story.style.zIndex = 0;
+  })
+  
+  document.getElementById('continue-2').addEventListener("click", function() {
+    const story = document.getElementById('story-card-2');
+    story.style.zIndex = 0;
+  })
+  
+  document.getElementById('continue-3').addEventListener("click", function() {
+    const story = document.getElementById('story-card-3');
+    story.style.zIndex = 0;
+  })
+  
+  document.getElementById('continue-4').addEventListener("click", function() {
+    const story = document.getElementById('story-card-4');
+    story.style.zIndex = 0;
+  })
+  
+  document.getElementById('continue-5').addEventListener("click", function() {
+    const story = document.getElementById('story-card-5');
+    story.style.zIndex = 0;
+  })
+  
+  document.getElementById('continue-6').addEventListener("click", function() {
+    const story = document.getElementById('story-card-6');
+    story.style.zIndex = 0;
+  })
+  
+  document.getElementById('continue-7').addEventListener("click", function() { 
+    const story7 = document.getElementById('story-card-7');
+    const story = Array.from(document.getElementsByClassName('story-cards')); 
+    story7.style.zIndex = 0;
+    console.log(story[2]);
+    story.forEach(function (entry) {
+    entry.style.opacity = 0;
+    }) 
   })
 
+  //Select Difficulty.
+
+//display difficulties.
+document.getElementById('difficulty-selector').addEventListener("click", function() {  
+  const difficultyLevel = Array.from(document.getElementsByClassName('difficulty'))
   
+  difficultyLevel.forEach(function (entry) {
+    entry.style.opacity = 10;
+  })
+})
+//sets difficulty level.
+
+document.getElementById('easy').addEventListener("click", function() { 
+  localStorage.setItem('diff', 'easy');
 })
 
+document.getElementById('medium').addEventListener("click", function() {
+  localStorage.setItem('diff', 'med');
+}
+)
+document.getElementById('hard').addEventListener("click", function() {
+  localStorage.setItem('diff', 'hard');
+})
+}
+
+//Sets difficulty in game page to whatever was selected in intro page.
+let level = localStorage.getItem('diff');
+console.log('level: ' + level);
+
+switch (level) {
+  case 'easy':
+    winCondition = 80;
+    break;
+  case 'med': 
+    winCondition = 200;
+    break;
+  case 'hard':
+    winCondition = 400;
+  default:
+    winCondition = 80; 
+}
+   
+
+
+//Determine if the guess is correct and displays result.
+let playerGuess;
+let outcome;
+const playerWin = () => {
+  console.log(`playerguess ${playerGuess}`);
+  //correct Guess
+    if (playerGuess === 'cup1' && cup1 === 'ball') {
+        outcome = 'win'; document.getElementById("show-round-result").innerHTML = "You are a Winner"; 
+    } else if (playerGuess === 'cup2' && cup2 === 'ball') {
+        outcome = 'win'; document.getElementById("show-round-result").innerHTML = "You are a Winner"; 
+    } else if (playerGuess === 'cup3' && cup3 === 'ball') {
+        outcome = 'win'; document.getElementById("show-round-result").innerHTML = "You are a Winner"; 
+   //incorrect guess
+    } else if (playerGuess === 'cup1' && cup1 === 'crab') { 
+        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
+    } else if (playerGuess === 'cup1' && cup1 === 'hobo') {
+        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
+    } else if (playerGuess === 'cup2' && cup2 === 'crab') { 
+        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
+    } else if (playerGuess === 'cup2' && cup2 === 'hobo') {
+        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser";  
+    } else if (playerGuess === 'cup3' && cup3 === 'crab') { 
+        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
+    } else if (playerGuess === 'cup3' && cup3 === 'hobo') {
+        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
+    }
+};
 
 
 let playerBet = 1;
@@ -64,9 +138,11 @@ const cup1Image = document.getElementById("cup1-image");
 const cup2Image = document.getElementById("cup2-image");
 const cup3Image = document.getElementById("cup3-image");
 const allCupImages = document.querySelectorAll(".cups");
+console.log(cup1Image);
 
 //Determines random ball position
-const ballPlacement = () => {
+function ballPlacement() {
+  
   const ballResult = Math.floor(Math.random() * 3);
   console.log(`ballResult ${ballResult}`);
   if (ballResult === 0) {
@@ -83,7 +159,7 @@ const ballPlacement = () => {
     cup1Image.style.backgroundImage = 'url(/crab3.png)';
     cup2Image.style.backgroundImage = 'url(/ball.png)';
     cup3Image.style.backgroundImage = 'url(/hobo.png)';
-  } else { (ballResult === 2); {
+  } else if (ballResult === 2); {
     cup1 = 'hobo';
     cup2 = 'crab';
     cup3 = 'ball';
@@ -91,39 +167,10 @@ const ballPlacement = () => {
     cup2Image.style.backgroundImage = 'url(/crab3.png)';
     cup3Image.style.backgroundImage = 'url(/ball.png)';
   }  
-  }
+  
   console.log(`cup1 ${cup1}`);
   console.log(`cup2 ${cup2}`);
   console.log(`cup3 ${cup3}`);
-};
-
-let playerGuess;
-let outcome;
-
-//Determine if the guess is correct and displays result.
-const playerWin = () => {
-  console.log(`playerguess ${playerGuess}`);
-  //correct Guess
-    if (playerGuess === 'cup1' && cup1 === 'ball') {
-        outcome = 'win'; document.getElementById("show-round-result").innerHTML = "You are a Winner"; 
-    } else if (playerGuess === 'cup2' && cup2 === 'ball') {
-        outcome = 'win'; document.getElementById("show-round-result").innerHTML = "You are a Winner"; 
-    } else if (playerGuess === 'cup3' && cup3 === 'ball') {
-        outcome = 'win'; document.getElementById("show-round-result").innerHTML = "You are a Winner"; 
-   //incorrect guess
-    } else if (playerGuess === 'cup1' && cup1 === 'crab') { 
-        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
-    } else if (playerGuess === 'cup1' && cup1 === 'hobo') {
-        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
-    } else if (playerGuess === 'cup2' && cup2 === 'crab') { 
-        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
-    } else if (playerGuess === 'cup2' && cup2 === 'hobo') {
-        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser";  
-    } else if (playerGuess === 'cup3' && cup3 === 'crab') { 
-        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
-    } else if (playerGuess === 'cup3' && cup3 === 'hobo') {
-        outcome = 'lose'; document.getElementById("show-round-result").innerHTML = "You are a Loser"; 
-    }
 };
 
 //Player selects cup, previous functions are called
@@ -186,7 +233,7 @@ const finalResult = () => {
     document.getElementById('final-result').innerHTML = "You have lost all your money!<br>You can not afford your rent tomorrow<br>Im sure you will make a great Hobo though<br>.....good luck.<br><br><a href='/index.html'>Try Again??</a>";
     backgroundCity.style.backgroundImage = "url(/losescreen.jpg)";
     allCupImages.forEach(removeCups);
-  } else if (playerCash >= 400) {
+  } else if (playerCash >= winCondition) {
     document.getElementById('final-result').innerHTML = "Congratulations!<br>You can now afford your rent<br>.....or maybe you should double your money and buy that fancy coffee machine you always wanted.<br><br><a href='/index.html'>Play Again??</a>";
     backgroundCity.style.backgroundImage = "url(/winscreen.jpg)";
     allCupImages.forEach(removeCups);
@@ -207,6 +254,8 @@ const finalResult = () => {
     console.log(backgroundIndex);
     console.log("selectedBackground" + selectedBackground);
     backgroundCity.style.backgroundImage = selectedBackground;
+    console.log('level' + level);
+    console.log('winC: ' + winCondition);
   }
 
   
@@ -223,4 +272,3 @@ const finalResult = () => {
   function restorePointers(element) {
     element.style.pointerEvents = "";
   }
-   
