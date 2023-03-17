@@ -265,9 +265,8 @@ function runAnimation(cupName) {
   allCupImages.forEach(removePointers);
   cupName.onanimationend = function () {
     cupName.style.animationName = "";
-    // ballPlacement();
-    allCupImages.forEach(restorePointers);
     ballPlacement();
+    allCupImages.forEach(restorePointers);
   };
 }
 
@@ -275,12 +274,12 @@ function runAnimation(cupName) {
 const finalResult = () => {
   if (playerCash <= 0) {
     document.getElementById("final-result").innerHTML =
-      "You have lost all your money!<br>You can not afford your rent tomorrow<br>Im sure you will make a great Hobo though<br>.....good luck.<br><br><a href='/game.html'>Try Again??</a>";
+      "You have lost all your money!<br>You can not afford your rent tomorrow<br>Im sure Tommy will have room on his couch though<br>.....good luck.<br><br><a href='./game.html'>Try Again??</a>";
     backgroundCity.style.backgroundImage = "url(/losescreen.jpg)";
     allCupImages.forEach(removeCups);
   } else if (playerCash >= winCondition) {
     document.getElementById("final-result").innerHTML =
-      "Congratulations!<br>You can now afford your rent<br>.....or maybe you should double your money and buy that fancy coffee machine you always wanted.<br><br><a href='/game.html'>Play Again??</a>";
+      "Congratulations!<br>You can now afford your date<br>.....or maybe you should double your money and buy that fancy coffee machine you always wanted.<br><br><a href='./game.html'>Play Again??</a>";
     backgroundCity.style.backgroundImage = "url(/winscreen.jpg)";
     allCupImages.forEach(removeCups);
   }
