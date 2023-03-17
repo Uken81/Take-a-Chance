@@ -1,51 +1,60 @@
-<!-- trest -->
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Take A Chance</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@600&family=Pangolin&display=swap");
+    </style>
+    <script type="text/javascript" src="./gameScript.js" async></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Hobo Balls</title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@600&family=Pangolin&display=swap');
-  </style>
-  <script type="text/javascript" src="/hoboscript.js" async></script>
-</head>
-
-<body onload="ballPlacement();">
-  <p class="glitch">
-    <span aria-hidden="true">Hobo Balls</span><span aria-hidden="true">Hobo Balls</span>Hobo Balls</p>
-  <button id="location">Change Location</button>
-  <div id="background-city">
-    <div class="cups" id="cup1-image">
-      <img src="/cup1.png">
+  <body onload="ballPlacement();">
+    <p class="glitch">
+      <span aria-hidden="true">Take A Chance</span
+      ><span aria-hidden="true">Take A Chance</span>Take A Chance
+    </p>
+    <button id="location">Change Location</button>
+    <div id="background-city">
+      <div class="cups" id="cup1-image">
+        <img src="./cup1.png" />
+      </div>
+      <div class="cups" id="cup2-image">
+        <img src="./cup2.png" />
+      </div>
+      <div class="cups" id="cup3-image">
+        <img src="./cup3.png" />
+      </div>
     </div>
-    <div class="cups" id="cup2-image">
-      <img src="/cup2.png">
+    <br />
+    <div class="info-wrap">
+      <div id="final-result"></div>
+      <div class="bet-info" id="bet-container">
+        <label for="bet">Place Your Bet $</label>
+        <input
+          name="bet"
+          id="bet"
+          type="number"
+          min="1"
+          max="400"
+          step="1"
+          value="1"
+        />
+        <br />
+        <button id="enter-bet">Enter Bet</button>
+        <p id="show-bet"></p>
+      </div>
+      <div class="round-result">
+        <p id="show-round-result"></p>
+      </div>
+      <div id="cash-info">
+        <p id="cash">You have $40 remaining</p>
+        <meter min="0" max="100" value="75" low="33" high="66" optimum="50">
+          75
+        </meter>
+      </div>
     </div>
-    <div class="cups" id="cup3-image">
-      <img src="/cup3.png">
-    </div>
-  </div>
-  <br>
-  <div class="info-wrap">
-    <div id="final-result"></div>
-    <div class="bet-info" id="bet-container">
-      <label for="bet">Place Your Bet $</label>
-      <input name="bet" id="bet" type="number" min="1" max="400" step="1" value="1" />
-      <br>
-      <button id="enter-bet">Enter Bet</button>
-      <p id="show-bet"></p>
-    </div>
-    <div class="round-result">
-      <p id="show-round-result"></p>
-    </div>
-    <div id="cash-info">
-      <p id="cash">You have $40 remaining</p>
-      <meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>
