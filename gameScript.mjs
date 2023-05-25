@@ -255,30 +255,30 @@ const finalResult = () => {
 };
 
 //Allows Player to change background city image.
-const backgroundArray = [
-  "url(./Assets/BackgroundImg/city1)",
-  "url(./Assets/BackgroundImg/city2.jpg)",
-  "url(./Assets/BackgroundImg/city3.jpg)",
-  "url(./Assets/BackgroundImg/city4.jpg)",
-  "url(./Assets/BackgroundImg/city5.jpg)",
-  "url(./Assets/BackgroundImg/ity6.jpg)",
-  "url(./Assets/BackgroundImg/city7.jpg)",
-];
-let backgroundIndex = 0;
-const button = document.getElementById("location");
-const backgroundCity = document.getElementById("background-city");
-backgroundCity.style.backgroundImage = "url(./city1.jpg)";
+// const backgroundArray = [
+//   "url(./Assets/BackgroundImg/city1)",
+//   "url(./Assets/BackgroundImg/city2.jpg)",
+//   "url(./Assets/BackgroundImg/city3.jpg)",
+//   "url(./Assets/BackgroundImg/city4.jpg)",
+//   "url(./Assets/BackgroundImg/city5.jpg)",
+//   "url(./Assets/BackgroundImg/ity6.jpg)",
+//   "url(./Assets/BackgroundImg/city7.jpg)",
+// ];
+// let backgroundIndex = 0;
+// const button = document.getElementById("location");
+// const backgroundCity = document.getElementById("background-city");
+// backgroundCity.style.backgroundImage = "url(./city1.jpg)";
 
-button.onclick = function () {
-  backgroundIndex = (backgroundIndex + 1) % backgroundArray.length;
-  let selectedBackground = backgroundArray[backgroundIndex];
-  console.log(backgroundArray[backgroundIndex]);
-  console.log(backgroundIndex);
-  console.log("selectedBackground" + selectedBackground);
-  backgroundCity.style.backgroundImage = selectedBackground;
-  console.log("level" + level);
-  console.log("winC: " + winCondition);
-};
+// button.onclick = function () {
+//   backgroundIndex = (backgroundIndex + 1) % backgroundArray.length;
+//   let selectedBackground = backgroundArray[backgroundIndex];
+//   console.log(backgroundArray[backgroundIndex]);
+//   console.log(backgroundIndex);
+//   console.log("selectedBackground" + selectedBackground);
+//   backgroundCity.style.backgroundImage = selectedBackground;
+//   console.log("level" + level);
+//   console.log("winC: " + winCondition);
+// };
 
 //removes the cup images to display win/lose screen.
 function removeCups(element) {
