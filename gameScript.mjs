@@ -1,7 +1,8 @@
+import { cup1 } from "./cups.mjs";
+
 //Event listeners for intro story progression.
 document.addEventListener("DOMContentLoaded", function () {
   if (document.body.id === "intro-page") {
-    console.log("intro");
     document
       .getElementById("continue-1")
       .addEventListener("click", function () {
@@ -123,7 +124,6 @@ switch (level) {
 let playerGuess;
 let outcome;
 const playerWin = () => {
-  console.log(`playerguess ${playerGuess}`);
   //correct Guess
   if (playerGuess === "cup1" && cup1 === "ball") {
     outcome = "win";
@@ -175,43 +175,12 @@ document.getElementById("bet").addEventListener("blur", function () {
   }
 });
 
-const cup1Image = document.getElementById("cup1-image");
-const cup2Image = document.getElementById("cup2-image");
-const cup3Image = document.getElementById("cup3-image");
+const cup1Background = document.getElementById("cup1-background");
+const cup2Background = document.getElementById("cup2-background");
+const cup3Background = document.getElementById("cup3-background");
 const allCupImages = document.querySelectorAll(".cups");
-console.log(cup1Image);
 
-//Determines random ball position
-function ballPlacement() {
-  const ballResult = Math.floor(Math.random() * 3);
-  console.log(`ballResult ${ballResult}`);
-  if (ballResult === 0) {
-    cup1 = "ball";
-    cup2 = "hobo";
-    cup3 = "crab";
-    cup1Image.style.backgroundImage = "url(./ball.png)";
-    cup2Image.style.backgroundImage = "url(./hobo.png)";
-    cup3Image.style.backgroundImage = "url(./crab3.png)";
-  } else if (ballResult === 1) {
-    cup1 = "crab";
-    cup2 = "ball";
-    cup3 = "hobo";
-    cup1Image.style.backgroundImage = "url(./crab3.png)";
-    cup2Image.style.backgroundImage = "url(./ball.png)";
-    cup3Image.style.backgroundImage = "url(./hobo.png)";
-  } else if (ballResult === 2) {
-    cup1 = "hobo";
-    cup2 = "crab";
-    cup3 = "ball";
-    cup1Image.style.backgroundImage = "url(./hobo.png)";
-    cup2Image.style.backgroundImage = "url(./crab3.png)";
-    cup3Image.style.backgroundImage = "url(./ball.png)";
-  }
-
-  console.log(`cup1 ${cup1}`);
-  console.log(`cup2 ${cup2}`);
-  console.log(`cup3 ${cup3}`);
-}
+function assignBackground(url) {}
 
 //Player selects cup, previous functions are called
 

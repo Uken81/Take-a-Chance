@@ -8,7 +8,9 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@600&family=Pangolin&display=swap");
     </style>
-    <script type="text/javascript" src="./gameScript.js" async></script>
+    <script type="module" src="./gameScript.mjs" async></script>
+    <script type="module" src="./cups.mjs" async></script>
+    <!-- <script type="text/javascript" src="./gameScript.js" async></script> -->
   </head>
 
   <body onload="ballPlacement();">
@@ -18,13 +20,13 @@
     </p>
     <button id="location">Change Location</button>
     <div id="background-city">
-      <div class="cups" id="cup1-image">
+      <div class="cups" id="cup1-background">
         <img src="./cup1.png" />
       </div>
-      <div class="cups" id="cup2-image">
+      <div class="cups" id="cup2-background">
         <img src="./cup2.png" />
       </div>
-      <div class="cups" id="cup3-image">
+      <div class="cups" id="cup3-background">
         <img src="./cup3.png" />
       </div>
     </div>
