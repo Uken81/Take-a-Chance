@@ -272,7 +272,7 @@ button:focus.difficulty {
   height: 25rem;
 }
 
-#cup1-image {
+#cup1-token {
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: bottom;
@@ -284,7 +284,7 @@ button:focus.difficulty {
   animation-play-state: running;
 }
 
-#cup2-image {
+#cup2-token {
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: bottom;
@@ -296,7 +296,7 @@ button:focus.difficulty {
   animation-play-state: running;
 }
 
-#cup3-image {
+#cup3-token {
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: bottom;

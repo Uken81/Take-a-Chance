@@ -2,21 +2,21 @@ const createCup = () => ({
   //remove name??
   name: "",
   result: "",
-  background: "",
+  tokenImg: "",
 
   setResult(result) {
     this.result = result;
   },
 
-  setBackground(imageTag) {
-    const imageUrl = `url(./GameImg/${imageTag}.png)`;
-    this.background = imageUrl;
+  setTokenImg(imageTag) {
+    const imageUrl = `url(./Assets/GameImg/${imageTag}.png)`;
+    this.tokenImg = imageUrl;
   },
 });
 
-const cup1 = createCup({});
-const cup2 = createCup({});
-const cup3 = createCup({});
+const cup1 = createCup();
+const cup2 = createCup();
+const cup3 = createCup();
 
 //Todo: move this gamescript.js
 placeTokens();
@@ -55,7 +55,7 @@ function setOutcome3() {
 
 function setCupProperties(cup, result) {
   cup.setResult(result);
-  cup.setBackground(result);
+  cup.setTokenImg(result);
 }
 
 export { cup1, cup2, cup3 };

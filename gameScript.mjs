@@ -175,10 +175,10 @@ document.getElementById("bet").addEventListener("blur", function () {
   }
 });
 
-const cup1Background = document.getElementById("cup1-background");
-const cup2Background = document.getElementById("cup2-background");
-const cup3Background = document.getElementById("cup3-background");
-const allCupImages = document.querySelectorAll(".cups");
+// const cup1Background = document.getElementById("cup1-background");
+// const cup2Background = document.getElementById("cup2-background");
+// const cup3Background = document.getElementById("cup3-background");
+// const allCupImages = document.querySelectorAll(".cups");
 
 function assignBackground(url) {}
 
@@ -256,13 +256,13 @@ const finalResult = () => {
 
 //Allows Player to change background city image.
 const backgroundArray = [
-  "url(./city1.jpg)",
-  "url(./city2.jpg)",
-  "url(./city3.jpg)",
-  "url(./city4.jpg)",
-  "url(./city5.jpg)",
-  "url(./city6.jpg)",
-  "url(./city7.jpg)",
+  "url(./Assets/BackgroundImg/city1)",
+  "url(./Assets/BackgroundImg/city2.jpg)",
+  "url(./Assets/BackgroundImg/city3.jpg)",
+  "url(./Assets/BackgroundImg/city4.jpg)",
+  "url(./Assets/BackgroundImg/city5.jpg)",
+  "url(./Assets/BackgroundImg/ity6.jpg)",
+  "url(./Assets/BackgroundImg/city7.jpg)",
 ];
 let backgroundIndex = 0;
 const button = document.getElementById("location");
