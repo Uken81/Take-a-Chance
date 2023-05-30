@@ -3,6 +3,9 @@ export const player = {
   bet: 1,
   hasWonRound: false,
 
+  setBet(betValue) {
+    this.bet = betValue;
+  },
   setHasWon(boolean) {
     this.hasWonRound = boolean;
   },

@@ -173,21 +173,21 @@ function determineIfWinner(resultToken) {
   }
 }
 
-//Shows initial bet value of $1.
-document.getElementById("show-bet").innerHTML = "You bet $" + bet;
+// //Shows initial bet value of $1.
+// document.getElementById("show-bet").innerHTML = "You bet $" + bet;
 
-//Player enters bet amount and displays it
-document.getElementById("enter-bet").addEventListener("click", function () {
-  bet = parseInt(document.getElementById("bet").valueAsNumber);
-  document.getElementById("show-bet").innerHTML = "You bet $" + bet;
-});
+// //Player enters bet amount and displays it
+// document.getElementById("enter-bet").addEventListener("click", function () {
+//   bet = parseInt(document.getElementById("bet").valueAsNumber);
+//   document.getElementById("show-bet").innerHTML = "You bet $" + bet;
+// });
 
-//Limits player to bet no more cash than what they have
-document.getElementById("bet").addEventListener("blur", function () {
-  if (document.getElementById("bet").value > playersBank) {
-    document.getElementById("bet").value = playersBank;
-  }
-});
+// //Limits player to bet no more cash than what they have
+// document.getElementById("bet").addEventListener("blur", function () {
+//   if (document.getElementById("bet").value > playersBank) {
+//     document.getElementById("bet").value = playersBank;
+//   }
+// });
 
 //Determines final win or loss conditions
 const finalResult = () => {
