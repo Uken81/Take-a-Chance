@@ -173,36 +173,20 @@ function determineIfWinner(resultToken) {
   }
 }
 
-// //Shows initial bet value of $1.
-// document.getElementById("show-bet").innerHTML = "You bet $" + bet;
-
-// //Player enters bet amount and displays it
-// document.getElementById("enter-bet").addEventListener("click", function () {
-//   bet = parseInt(document.getElementById("bet").valueAsNumber);
-//   document.getElementById("show-bet").innerHTML = "You bet $" + bet;
-// });
-
-// //Limits player to bet no more cash than what they have
-// document.getElementById("bet").addEventListener("blur", function () {
-//   if (document.getElementById("bet").value > playersBank) {
-//     document.getElementById("bet").value = playersBank;
-//   }
-// });
-
 //Determines final win or loss conditions
-const finalResult = () => {
-  if (playersBank <= 0) {
-    document.getElementById("final-result").innerHTML =
-      "You have lost all your money!<br>You can not afford your rent tomorrow<br>Im sure Tommy will have room on his couch though<br>.....good luck.<br><br><a href='./game.html'>Try Again??</a>";
-    backgroundCity.style.backgroundImage = "url(/losescreen.jpg)";
-    allCupElements.forEach(removeCups);
-  } else if (playersBank >= winCondition) {
-    document.getElementById("final-result").innerHTML =
-      "Congratulations!<br>You can now afford your date<br>.....or maybe you should double your money and buy that fancy coffee machine you always wanted.<br><br><a href='./game.html'>Play Again??</a>";
-    backgroundCity.style.backgroundImage = "url(/winscreen.jpg)";
-    allCupElements.forEach(removeCups);
-  }
-};
+// const finalResult = () => {
+//   if (playersBank <= 0) {
+//     document.getElementById("final-result").innerHTML =
+//       "You have lost all your money!<br>You can not afford your rent tomorrow<br>Im sure Tommy will have room on his couch though<br>.....good luck.<br><br><a href='./game.html'>Try Again??</a>";
+//     backgroundCity.style.backgroundImage = "url(/losescreen.jpg)";
+//     allCupElements.forEach(removeCups);
+//   } else if (playersBank >= winCondition) {
+//     document.getElementById("final-result").innerHTML =
+//       "Congratulations!<br>You can now afford your date<br>.....or maybe you should double your money and buy that fancy coffee machine you always wanted.<br><br><a href='./game.html'>Play Again??</a>";
+//     backgroundCity.style.backgroundImage = "url(/winscreen.jpg)";
+//     allCupElements.forEach(removeCups);
+//   }
+// };
 
 //removes the cup images to display win/lose screen.
 function removeCups(element) {
