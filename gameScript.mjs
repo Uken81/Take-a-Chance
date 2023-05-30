@@ -1,4 +1,6 @@
-import { cup1 } from "./cups.mjs";
+import { cup1, cup2, cup3 } from "./cups.mjs";
+import { player } from "./player.mjs";
+import { adjustPlayersBank } from "./playersBank.js";
 
 //Event listeners for intro story progression.
 document.addEventListener("DOMContentLoaded", function () {
@@ -120,165 +122,87 @@ switch (level) {
     winCondition = 80;
 }
 
-//Determine if the guess is correct and displays result.
-let playerGuess;
-let outcome;
-const playerWin = () => {
-  //correct Guess
-  if (playerGuess === "cup1" && cup1 === "ball") {
-    outcome = "win";
-    document.getElementById("show-round-result").innerHTML = "You are a Winner";
-  } else if (playerGuess === "cup2" && cup2 === "ball") {
-    outcome = "win";
-    document.getElementById("show-round-result").innerHTML = "You are a Winner";
-  } else if (playerGuess === "cup3" && cup3 === "ball") {
-    outcome = "win";
-    document.getElementById("show-round-result").innerHTML = "You are a Winner";
-    //incorrect guess
-  } else if (playerGuess === "cup1" && cup1 === "crab") {
-    outcome = "lose";
-    document.getElementById("show-round-result").innerHTML = "You are a Loser";
-  } else if (playerGuess === "cup1" && cup1 === "hobo") {
-    outcome = "lose";
-    document.getElementById("show-round-result").innerHTML = "You are a Loser";
-  } else if (playerGuess === "cup2" && cup2 === "crab") {
-    outcome = "lose";
-    document.getElementById("show-round-result").innerHTML = "You are a Loser";
-  } else if (playerGuess === "cup2" && cup2 === "hobo") {
-    outcome = "lose";
-    document.getElementById("show-round-result").innerHTML = "You are a Loser";
-  } else if (playerGuess === "cup3" && cup3 === "crab") {
-    outcome = "lose";
-    document.getElementById("show-round-result").innerHTML = "You are a Loser";
-  } else if (playerGuess === "cup3" && cup3 === "hobo") {
-    outcome = "lose";
-    document.getElementById("show-round-result").innerHTML = "You are a Loser";
-  }
-};
+document.addEventListener("click", function (event) {
+  console.log(event.target);
+  console.log(event.target.id);
+  if (event.target.matches(".cup-image")) {
+    const cupImage = event.target;
+    const resultToken = determineToken(event.target.id);
+    console.log(resultToken);
+    console.log(cupImage);
 
-let playerBet = 1;
-let playerCash = 40;
+    runAnimation(cupImage);
+    determineIfWinner(resultToken);
+    adjustPlayersBank();
+  }
+});
+
+function determineToken(eventID) {
+  if (eventID === "cup1-image") {
+    return cup1.resultToken;
+  } else if (eventID === "cup2-image") {
+    return cup2.resultToken;
+  } else if (eventID === "cup3-image") {
+    return cup3.resultToken;
+  }
+}
+
+const allCupElements = document.querySelectorAll(".cups");
+function runAnimation(cupElement) {
+  cupElement.style.animationName = "liftcup";
+  //refactor pointer actions in functions
+  allCupElements.forEach(removePointers);
+  cupElement.onanimationend = function () {
+    cupElement.style.animationName = "";
+    // ballPlacement();
+    allCupElements.forEach(restorePointers);
+  };
+}
+
+function determineIfWinner(resultToken) {
+  console.log(resultToken);
+  if (resultToken === "ball") {
+    player.setHasWon(true);
+    //delete before commit and below
+    const hasWon = player.hasWonRound;
+    console.log("winner?", hasWon);
+  } else {
+    player.setHasWon(false);
+    const hasWon = player.hasWonRound;
+    console.log("winner?", hasWon);
+  }
+}
 
 //Shows initial bet value of $1.
-document.getElementById("show-bet").innerHTML = "You bet $" + playerBet;
+document.getElementById("show-bet").innerHTML = "You bet $" + bet;
 
 //Player enters bet amount and displays it
 document.getElementById("enter-bet").addEventListener("click", function () {
-  playerBet = parseInt(document.getElementById("bet").valueAsNumber);
-  document.getElementById("show-bet").innerHTML = "You bet $" + playerBet;
+  bet = parseInt(document.getElementById("bet").valueAsNumber);
+  document.getElementById("show-bet").innerHTML = "You bet $" + bet;
 });
 
 //Limits player to bet no more cash than what they have
 document.getElementById("bet").addEventListener("blur", function () {
-  if (document.getElementById("bet").value > playerCash) {
-    document.getElementById("bet").value = playerCash;
+  if (document.getElementById("bet").value > playersBank) {
+    document.getElementById("bet").value = playersBank;
   }
 });
-
-// const cup1Background = document.getElementById("cup1-background");
-// const cup2Background = document.getElementById("cup2-background");
-// const cup3Background = document.getElementById("cup3-background");
-// const allCupImages = document.querySelectorAll(".cups");
-
-function assignBackground(url) {}
-
-//Player selects cup, previous functions are called
-
-//cup1
-document.getElementById("cup1-image").addEventListener("click", function () {
-  playerGuess = "cup1";
-  runAnimation(cup1Image);
-  playerWin();
-  if (outcome === "win") {
-    playerCash = playerCash + playerBet;
-  } else if (outcome === "lose") {
-    playerCash = playerCash - playerBet;
-  }
-  document.getElementById("cash").innerHTML =
-    "You have $" + playerCash + " remaining";
-  finalResult();
-});
-
-//cup2
-document.getElementById("cup2-image").addEventListener("click", function () {
-  playerGuess = "cup2";
-  runAnimation(cup2Image);
-  playerWin();
-  if (outcome === "win") {
-    playerCash = playerCash + playerBet;
-  } else if (outcome === "lose") {
-    playerCash = playerCash - playerBet;
-  }
-  document.getElementById("cash").innerHTML =
-    "You have $" + playerCash + " remaining";
-  finalResult();
-});
-
-//cup3
-document.getElementById("cup3-image").addEventListener("click", function () {
-  playerGuess = "cup3";
-  runAnimation(cup3Image);
-  playerWin();
-  if (outcome === "win") {
-    playerCash = playerCash + playerBet;
-  } else if (outcome === "lose") {
-    playerCash = playerCash - playerBet;
-  }
-  document.getElementById("cash").innerHTML =
-    "You have $" + playerCash + " remaining";
-  finalResult();
-});
-//Runs the liftcup animation when a cup is selected. Prevents cups from being selected during animation. Redistributes items under random balls.
-function runAnimation(cupName) {
-  cupName.style.animationName = "liftcup";
-  allCupImages.forEach(removePointers);
-  cupName.onanimationend = function () {
-    cupName.style.animationName = "";
-    ballPlacement();
-    allCupImages.forEach(restorePointers);
-  };
-}
 
 //Determines final win or loss conditions
 const finalResult = () => {
-  if (playerCash <= 0) {
+  if (playersBank <= 0) {
     document.getElementById("final-result").innerHTML =
       "You have lost all your money!<br>You can not afford your rent tomorrow<br>Im sure Tommy will have room on his couch though<br>.....good luck.<br><br><a href='./game.html'>Try Again??</a>";
     backgroundCity.style.backgroundImage = "url(/losescreen.jpg)";
-    allCupImages.forEach(removeCups);
-  } else if (playerCash >= winCondition) {
+    allCupElements.forEach(removeCups);
+  } else if (playersBank >= winCondition) {
     document.getElementById("final-result").innerHTML =
       "Congratulations!<br>You can now afford your date<br>.....or maybe you should double your money and buy that fancy coffee machine you always wanted.<br><br><a href='./game.html'>Play Again??</a>";
     backgroundCity.style.backgroundImage = "url(/winscreen.jpg)";
-    allCupImages.forEach(removeCups);
+    allCupElements.forEach(removeCups);
   }
 };
-
-//Allows Player to change background city image.
-// const backgroundArray = [
-//   "url(./Assets/BackgroundImg/city1)",
-//   "url(./Assets/BackgroundImg/city2.jpg)",
-//   "url(./Assets/BackgroundImg/city3.jpg)",
-//   "url(./Assets/BackgroundImg/city4.jpg)",
-//   "url(./Assets/BackgroundImg/city5.jpg)",
-//   "url(./Assets/BackgroundImg/ity6.jpg)",
-//   "url(./Assets/BackgroundImg/city7.jpg)",
-// ];
-// let backgroundIndex = 0;
-// const button = document.getElementById("location");
-// const backgroundCity = document.getElementById("background-city");
-// backgroundCity.style.backgroundImage = "url(./city1.jpg)";
-
-// button.onclick = function () {
-//   backgroundIndex = (backgroundIndex + 1) % backgroundArray.length;
-//   let selectedBackground = backgroundArray[backgroundIndex];
-//   console.log(backgroundArray[backgroundIndex]);
-//   console.log(backgroundIndex);
-//   console.log("selectedBackground" + selectedBackground);
-//   backgroundCity.style.backgroundImage = selectedBackground;
-//   console.log("level" + level);
-//   console.log("winC: " + winCondition);
-// };
 
 //removes the cup images to display win/lose screen.
 function removeCups(element) {

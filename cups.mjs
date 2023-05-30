@@ -1,11 +1,11 @@
-const createCup = () => ({
+const createCup = ({ name }) => ({
   //remove name??
-  name: "",
-  result: "",
+  name,
+  resultToken: "",
   tokenImg: "",
 
-  setResult(result) {
-    this.result = result;
+  setResultToken(resultToken) {
+    this.resultToken = resultToken;
   },
 
   setTokenImg(imageTag) {
@@ -14,9 +14,9 @@ const createCup = () => ({
   },
 });
 
-const cup1 = createCup();
-const cup2 = createCup();
-const cup3 = createCup();
+const cup1 = createCup({ name: "cup1" });
+const cup2 = createCup({ name: "cup2" });
+const cup3 = createCup({ name: "cup3" });
 
 //Todo: move this gamescript.js
 placeTokens();
@@ -37,6 +37,7 @@ function determineBallPosition() {
   return Math.floor(Math.random() * 3);
 }
 
+//code duplication. Look for alternative
 function setOutcome1() {
   setCupProperties(cup1, "ball");
   setCupProperties(cup2, "hobo");
@@ -53,9 +54,9 @@ function setOutcome3() {
   setCupProperties(cup3, "ball");
 }
 
-function setCupProperties(cup, result) {
-  cup.setResult(result);
-  cup.setTokenImg(result);
+function setCupProperties(cup, resultToken) {
+  cup.setResultToken(resultToken);
+  cup.setTokenImg(resultToken);
 }
 
 export { cup1, cup2, cup3 };

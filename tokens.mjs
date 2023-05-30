@@ -1,13 +1,14 @@
+//what are below doing?
 import { cup1 } from "./cups.mjs";
 import { cup2 } from "./cups.mjs";
 import { cup3 } from "./cups.mjs";
 
-const cup1Token = document.getElementById("cup1-token");
-const cup2Token = document.getElementById("cup2-token");
-const cup3Token = document.getElementById("cup3-token");
-//move this back to game.js??
-const allCupImages = document.querySelectorAll(".cups");
+//convert this file back to js??
+const cup1Container = document.getElementById("cup1-container");
+const cup2Container = document.getElementById("cup2-container");
+const cup3Container = document.getElementById("cup3-container");
 
-cup1Token.style.backgroundImage = cup1.tokenImg;
-cup2Token.style.backgroundImage = cup2.tokenImg;
-cup3Token.style.backgroundImage = cup3.tokenImg;
+//put this into a function?? ApplyTokenBackground??
+cup1Container.style.backgroundImage = cup1.tokenImg;
+cup2Container.style.backgroundImage = cup2.tokenImg;
+cup3Container.style.backgroundImage = cup3.tokenImg;

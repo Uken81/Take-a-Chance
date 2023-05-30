@@ -272,10 +272,23 @@ button:focus.difficulty {
   height: 25rem;
 }
 
-#cup1-token {
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: bottom;
+#cup1-image {
+  padding-top: 30vh;
+
+  animation-name: "";
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+#cup2-image {
+  padding-top: 30vh;
+
+  animation-name: "";
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+#cup3-image {
   padding-top: 30vh;
 
   animation-name: "";
@@ -284,28 +297,40 @@ button:focus.difficulty {
   animation-play-state: running;
 }
 
-#cup2-token {
+#cup1-container {
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: bottom;
-  padding-top: 30vh;
+  /* padding-top: 30vh; */
 
-  animation-name: "";
+  /* animation-name: "";
   animation-duration: 3s;
   animation-timing-function: linear;
-  animation-play-state: running;
+  animation-play-state: running; */
 }
 
-#cup3-token {
+#cup2-container {
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: bottom;
-  padding-top: 30vh;
+  /* padding-top: 30vh; */
+
+  /* animation-name: "";
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-play-state: running; */
+}
+
+#cup3-container {
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: bottom;
+  /* padding-top: 30vh;
 
   animation-name: "";
   animation-duration: 3s;
   animation-timing-function: linear;
-  animation-play-state: running;
+  animation-play-state: running; */
 }
 
 @keyframes liftcup {
