@@ -15,10 +15,9 @@
   overflow-y: scroll;
 } */
 
-/* Intro Page */
-
-#intro-container {
+.menu-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -32,44 +31,22 @@
   );
 }
 
-#story-card {
-  height: 85vh;
-  width: 55vh;
-  border: solid 10px black;
-  box-shadow: rgba(218, 183, 183, 0.35) 10px 10px 15px;
-  background-color: rgb(32, 28, 28);
-}
-
-#image-container {
-  height: 55%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-bottom: solid 10px black;
-}
-
-#text-container {
-  height: 45%;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: azure;
-  text-shadow: 0px 2px 3px rgb(116, 22, 22);
-  padding: 5%;
-}
-
-#continue {
-  margin-top: 5%;
-}
-
 #instructions-container {
+  display: none;
+  position: absolute;
+  height: fit-content;
   background-color: black;
   color: azure;
+  margin: 5%;
   padding: 5%;
+  text-align: center;
   font-size: 1.5em;
-  grid-row: 1 / span 2;
-  grid-column: 2 / span 2;
-  opacity: 0;
-  z-index: 0;
+
+  /* list-style-position: inside; */
+  /* grid-row: 1 / span 2;
+  grid-column: 2 / span 2; */
+  /* opacity: 0; */
+  /* z-index: ; */
 }
 
 button {
@@ -98,7 +75,7 @@ a:link {
 
 #intro-buttons {
   margin-top: 10%;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .difficulty {

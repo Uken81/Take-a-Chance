@@ -33,7 +33,7 @@ function updateCard(index) {
 }
 
 function redirectToMenu() {
-  window.location.href = "./menu";
+  window.location.href = "../Menu/menu.html";
 }
 
 const imageContainer = document.getElementById("image-container");
