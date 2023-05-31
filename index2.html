@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="text/javascript" src="./gameScript.js"></script>
+    <title>Take A Chance</title>
+  </head>
+
+  <body id="intro-page">
+    <div class="intro-container" id="story-container">
+      <div class="story-cards" id="story-card-1">
+        <div class="image-box" id="image-box-1"></div>
+        <div class="text-box">
+          <p>
+            There you are, grinding away at your desk.<br />Today went exactly
+            like Yesterday and the day before,<br />wait a minute.......
+            <br />the day before yesterday was Taco Tuesday which is always nice.<br /><br />Then
+            it Happened...............
+          </p>
+          <button type="button" class="continue" id="continue-1">
+            Continue
+          </button>
+        </div>
+      </div>
+      <div class="story-cards" id="story-card-2">
+        <div class="image-box" id="image-box-2"></div>
+        <div class="text-box">
+          <p>
+            Bianca from HR finally agreed to go out with you <br />Tommorow
+            night. This is the best thing to happen in a <br />long long
+            time.<br /><br />Then the realisation strikes you......
+          </p>
+          <button type="button" id="continue-2">Continue</button>
+        </div>
+      </div>
+      <div class="story-cards" id="story-card-3">
+        <div class="image-box" id="image-box-3"></div>
+        <div class="text-box">
+          <p>
+            I’m a damn fool.<br />Bianca is a woman of taste and I spent all my
+            money on margaritas on Tuesday!<br />I have $10 to my name and I
+            dont get paid for another four days.<br />I know, I’ll go see my
+            Cousin Tommy he was always resourcefull.....
+          </p>
+          <button type="button" id="continue-3">Continue</button>
+        </div>
+      </div>
+      <div class="story-cards" id="story-card-4">
+        <div class="image-box" id="image-box-4"></div>
+        <div class="text-box">
+          <p>
+            “Sure I know plenty of ways to make money, check out these boots”
+            Tommy exclaims.<br />“All I had to do was sell one of my kidneys and
+            I had enough for these bad boys and the couch.”<br />“ahh ok, but do you have
+            anything that maybe doesn’t require me to have surgery?”.......
+          </p>
+          <button type="button" id="continue-4">Continue</button>
+        </div>
+      </div>
+      <div class="story-cards" id="story-card-5">
+        <div class="image-box" id="image-box-5"></div>
+        <div class="text-box">
+          <p>
+            Tommy gives you an address to a dodgy part of town.<br />“I dont
+            know about this, is it safe?” you ask.<br />“Sure.... Dont worry
+            about it, you’ll be fine just ask for Slasher.”<br />“what I have I got
+            myself into?” you wonder aloud......
+          </p>
+          <button type="button" id="continue-5">Continue</button>
+        </div>
+      </div>
+      <div class="story-cards" id="story-card-6">
+        <div class="image-box" id="image-box-6"></div>
+        <div class="text-box">
+          <p>
+            You approach the heavy steel door at the address you were given. A
+            small viewing hatch slides open and hard eyes peer at you through
+            it.<br />“Whataya want?” a rough voice asks.<br />“im here to see
+            Slasher.” you reply.<br />“You here to play or claim the lost
+            puppy?”<br />“Um well ah, to play.” you manage to stammer out.....
+          </p>
+          <button type="button" id="continue-6">Continue</button>
+        </div>
+      </div>
+      <div class="story-cards" id="story-card-7">
+        <div class="image-box" id="image-box-7"></div>
+        <div class="text-box">
+          <p>
+            “Well then my new friend. My names Slasher Welcome to the greatest
+            game in this neighbourhood.”<br />He throws the door open and
+            exclaims<br />“Welcome to...........................
+          </p>
+          <button type="button" id="continue-7">Continue</button>
+        </div>
+      </div>
+      <div id="instructions-container">
+        <p>
+          <strong>HOW TO PLAY</strong><br /><br />Take a Chance is a game of
+          luck.<br />You must guess which cup the ball is hiding under to win
+          money.<br />Before starting a new game you can select your difficulty
+          level, what you choose will change the amount of dollars you need to
+          win and take Bianca out.<br /><br />
+          <ul>
+            <li>Bar Food/Easy: $80</li>
+            <li>Chinese Restaurant/Medium: $200</li>
+            <li>Fine Dining/Hard: $400</li>
+          </ul>
+          <br /><br />You can choose how much money you would like to bet by
+          changing the amount in the 'Place Your Bet' field and clicking on the
+          'Enter Bet' button.<br /><br />After setting your bet you can guess
+          which cup the ball is hiding under by clicking on the cups.<br />If a
+          ball is shown to be under your chosen cup the amount you bet will be
+          added to your remaining cash. If a mini Hobo or crab is under your
+          selected cup you will lose what you bet from your total.<br /><br />You
+          lose when all your money is gone but if you manage to get your total
+          cash level to or above the limit you set when choosing difficulty you
+          have enough to take Bianca out to your chosen Restauraunt.
+        </p>
+        <br /><br />
+        <button type="button" id="close-instructions">CLOSE</button>
+      </div>
+
+      <div id="intro-glitch-container">
+        <p class="glitch" id="intro-glitch">
+          <span aria-hidden="true">Take A Chance</span
+          ><span aria-hidden="true">Take A Chance</span>Take A Chance
+        </p>
+        <div id="intro-buttons">
+          <button type="button" id="instructions">How To Play</button>
+          <button type="button" id="difficulty-selector">
+            Difficulty
+          </button>
+          <button type="button" id="beginGame">
+            <a href="./game.html">New Game</a>
+          </button>
+        </div>
+        <br />
+        <button type="button" class="difficulty" id="easy">Pub Meal</button>
+        <br />
+        <button type="button" class="difficulty" id="medium">
+          Nice Chinese Restaurant
+        </button>
+        <br />
+        <button type="button" class="difficulty" id="hard">Fine Dining</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-body {
+/* body {
   text-align: center;
   background: radial-gradient(
       90% 60% at 50% 80%,
@@ -13,102 +13,52 @@ body {
     no-repeat #1cb5e0;
   max-height: 100%;
   overflow-y: scroll;
-}
+} */
 
 /* Intro Page */
 
-.intro-container {
-  display: grid;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
-  max-height: 1080px;
-  /* max-height: 100vh; */
-  padding: 0% 20% 0% 20%;
+#intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
-.story-cards {
+#story-card {
+  height: 85vh;
   width: 55vh;
-  height: 95vh;
-
-  margin-top: 15%;
   border: solid 10px black;
   box-shadow: rgba(218, 183, 183, 0.35) 10px 10px 15px;
   background-color: rgb(32, 28, 28);
 }
 
-.image-box {
-  height: 60%;
+#image-container {
+  height: 55%;
   background-size: cover;
   background-repeat: no-repeat;
   border-bottom: solid 10px black;
 }
 
-#image-box-1 {
-  background-image: url("./intro1.png");
-}
-#image-box-2 {
-  background-image: url("./intro2.png");
-}
-#image-box-3 {
-  background-image: url("./intro3.png");
-}
-#image-box-4 {
-  background-image: url("./intro4.png");
-}
-#image-box-5 {
-  background-image: url("./intro5.png");
-}
-#image-box-6 {
-  background-image: url("./intro6.png");
-}
-#image-box-7 {
-  background-image: url("./intro7.png");
-}
-
-.text-box {
-  height: 40%;
+#text-container {
+  height: 45%;
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
   color: azure;
   text-shadow: 0px 2px 3px rgb(116, 22, 22);
-}
-
-.text-box p {
   padding: 5%;
 }
 
-.story-cards {
-  grid-row: 1 / span 2;
-  grid-column: 2 / span 2;
-}
-
-#story-card-1 {
-  z-index: 9;
-  height: 1000px;
-}
-#story-card-2 {
-  z-index: 8;
-  height: 1000px;
-}
-#story-card-3 {
-  z-index: 7;
-  height: 1000px;
-}
-#story-card-4 {
-  z-index: 6;
-  height: 1000px;
-}
-#story-card-5 {
-  z-index: 5;
-  height: 1000px;
-}
-#story-card-6 {
-  z-index: 4;
-  height: 1000px;
-}
-#story-card-7 {
-  z-index: 3;
-  height: 1000px;
+#continue {
+  margin-top: 5%;
 }
 
 #instructions-container {
@@ -128,7 +78,6 @@ button {
   border-radius: 16px;
   background-color: black;
   color: white;
-  margin: 1%;
   font-size: 1.1em;
   text-shadow: 3px 2px 3px rgb(116, 22, 22);
   outline: none;
