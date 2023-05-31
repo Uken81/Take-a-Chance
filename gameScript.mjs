@@ -1,4 +1,5 @@
 import { cup1, cup2, cup3 } from "./cups.mjs";
+import { checkEndGame } from "./endGame/endGame.js";
 import { player } from "./player.mjs";
 import { adjustPlayersBank } from "./playersBank.js";
 
@@ -134,6 +135,7 @@ document.addEventListener("click", function (event) {
     runAnimation(cupImage);
     determineIfWinner(resultToken);
     adjustPlayersBank();
+    checkEndGame();
   }
 });
 
