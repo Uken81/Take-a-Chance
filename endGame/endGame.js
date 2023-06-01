@@ -11,29 +11,45 @@ export function checkEndGame() {
   redirectEndGame();
 }
 
+function redirectEndGame() {
+  window.location.replace("./endGame/endGame.html");
+}
+
 function checkConditions() {
   const bank = player.bank;
+  const winCondition = calculateWinCondition();
   if (bank <= 0) {
     return "lose";
-    //connect proper win condition
-  } else if (bank >= 80) {
-    // } else if (bank >= winCondition) {
+  } else if (bank >= winCondition) {
     return "win";
   } else {
     return "continue";
   }
 }
 
-function redirectEndGame() {
-  window.location.href = "./endGame/endGame.html";
+function calculateWinCondition() {
+  const difficulty = localStorage.getItem("difficulty");
+
+  switch (difficulty) {
+    case "easy":
+      return 80;
+
+    case "medium":
+      return 200;
+
+    case "hard":
+      return 400;
+    default:
+      return 80;
+  }
 }
 
 //Fires when page is redirected to endGame.html
 document.addEventListener("DOMContentLoaded", function () {
-  initializeEndGame();
+  initialiseEndGame();
 });
 
-function initializeEndGame() {
+function initialiseEndGame() {
   const gameState = getGameStateFromURL();
   console.log("gameState", gameState);
 

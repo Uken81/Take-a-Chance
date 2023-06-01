@@ -3,8 +3,8 @@ export const player = {
   bet: 1,
   hasWonRound: false,
 
-  setBet(betValue) {
-    this.bet = betValue;
+  setBet(value) {
+    this.bet = value;
   },
   setHasWon(boolean) {
     this.hasWonRound = boolean;
@@ -16,5 +16,3 @@ export const player = {
     this.bank = this.bank - this.bet;
   },
 };
-
-console.log("player", player);

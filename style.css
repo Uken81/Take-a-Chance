@@ -41,12 +41,20 @@
   padding: 5%;
   text-align: center;
   font-size: 1.5em;
+}
 
-  /* list-style-position: inside; */
-  /* grid-row: 1 / span 2;
-  grid-column: 2 / span 2; */
-  /* opacity: 0; */
-  /* z-index: ; */
+#difficulty-container {
+  display: none;
+  flex-direction: column;
+}
+
+.difficulty {
+  margin-top: 5%;
+  font-size: medium;
+}
+
+button:focus.difficulty {
+  background: red;
 }
 
 button {
@@ -76,14 +84,6 @@ a:link {
 #intro-buttons {
   margin-top: 10%;
   /* z-index: 10; */
-}
-
-.difficulty {
-  opacity: 0;
-}
-
-button:focus.difficulty {
-  background: red;
 }
 
 .glitch {

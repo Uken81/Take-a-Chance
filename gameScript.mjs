@@ -3,64 +3,6 @@ import { checkEndGame } from "./endGame/endGame.js";
 import { player } from "./player.mjs";
 import { adjustPlayersBank } from "./playersBank.js";
 
-const intsructions = document.getElementById("instructions-container");
-document.getElementById("instructions").addEventListener("click", function () {
-  intsructions.style.opacity = 10;
-  intsructions.style.zIndex = 10;
-});
-
-document
-  .getElementById("close-instructions")
-  .addEventListener("click", function () {
-    intsructions.style.opacity = 0;
-    intsructions.style.zIndex = 0;
-  });
-
-//Select Difficulty.
-
-//display difficulties.
-document
-  .getElementById("difficulty-selector")
-  .addEventListener("click", function () {
-    const difficultyLevel = Array.from(
-      document.getElementsByClassName("difficulty")
-    );
-
-    difficultyLevel.forEach(function (entry) {
-      entry.style.opacity = 10;
-    });
-  });
-//sets difficulty level.
-
-document.getElementById("easy").addEventListener("click", function () {
-  localStorage.setItem("diff", "easy");
-});
-
-document.getElementById("medium").addEventListener("click", function () {
-  localStorage.setItem("diff", "med");
-});
-document.getElementById("hard").addEventListener("click", function () {
-  localStorage.setItem("diff", "hard");
-});
-
-//Sets difficulty in game page to whatever was selected in intro page.
-let level = localStorage.getItem("diff");
-let winCondition;
-console.log("level: " + level);
-
-switch (level) {
-  case "easy":
-    winCondition = 80;
-    break;
-  case "med":
-    winCondition = 200;
-    break;
-  case "hard":
-    winCondition = 400;
-  default:
-    winCondition = 80;
-}
-
 document.addEventListener("click", function (event) {
   console.log(event.target);
   console.log(event.target.id);
