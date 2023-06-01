@@ -9,7 +9,7 @@ const createCup = ({ name }) => ({
   },
 
   setTokenImg(imageTag) {
-    const imageUrl = `url(./Assets/GameImg/${imageTag}.png)`;
+    const imageUrl = `url(../../Assets/GameImg/${imageTag}.png)`;
     this.tokenImg = imageUrl;
   },
 });

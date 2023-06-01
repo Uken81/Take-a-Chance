@@ -1,4 +1,4 @@
-import { player } from "../player.mjs";
+import { player } from "../Game/Common/player.mjs";
 
 export function checkEndGame() {
   const gameState = checkConditions();

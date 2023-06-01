@@ -4,19 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Take A Chance</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@600&family=Pangolin&display=swap");
     </style>
     <script type="module" src="./gameScript.mjs" async></script>
-    <script type="module" src="./cups.mjs" async></script>
-    <script type="module" src="./tokens.mjs" async></script>
-    <script type="module" src="./betting.js" async></script>
-    <script type="text/javascript" src="./cityBackground.js" async></script>
+    <script type="module" src="./Common/cups.mjs" async></script>
+    <script type="module" src="./Common/tokens.mjs" async></script>
+    <script type="module" src="./Components/betting.js" async></script>
+    <script
+      type="text/javascript"
+      src="./Components/cityBackground.js"
+      async
+    ></script>
     <!-- <script type="text/javascript" src="./gameScript.js" async></script> -->
   </head>
 
-  <!-- <body onload="ballPlacement();"> -->
   <body>
     <p class="glitch">
       <span aria-hidden="true">Take A Chance</span
@@ -28,21 +31,21 @@
         <img
           class="cup-image"
           id="cup1-image"
-          src="./Assets/GameImg/cup1.png"
+          src="../Assets/GameImg/cup1.png"
         />
       </div>
       <div class="cups" id="cup2-container">
         <img
           class="cup-image"
           id="cup2-image"
-          src="./Assets/GameImg/cup2.png"
+          src="../Assets/GameImg/cup2.png"
         />
       </div>
       <div class="cups" id="cup3-container">
         <img
           class="cup-image"
           id="cup3-image"
-          src="./Assets/GameImg/cup3.png"
+          src="../Assets/GameImg/cup3.png"
         />
       </div>
     </div>

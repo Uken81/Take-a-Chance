@@ -1,4 +1,4 @@
-import { player } from "./player.mjs";
+import { player } from "../Common/player.mjs";
 
 document.getElementById("enter-bet").addEventListener("click", function () {
   const input = document.getElementById("bet-input");

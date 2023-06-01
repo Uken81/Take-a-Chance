@@ -1,4 +1,4 @@
-import { player } from "./player.mjs";
+import { player } from "../Common/player.mjs";
 
 export function adjustPlayersBank() {
   modifyValue();

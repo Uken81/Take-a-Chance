@@ -1,12 +1,12 @@
-import { cup1, cup2, cup3 } from "./cups.mjs";
-import { checkEndGame } from "./endGame/endGame.js";
-import { player } from "./player.mjs";
-import { adjustPlayersBank } from "./playersBank.js";
+import { cup1, cup2, cup3 } from "../Game/Common/cups.mjs";
+import { checkEndGame } from "../endGame/endGame.js";
+import { player } from "./Common/player.mjs";
+import { adjustPlayersBank } from "./Components/playersBank.js";
 
 document.addEventListener("click", function (event) {
   console.log(event.target);
   console.log(event.target.id);
-  if (event.target.matches(".cup-image")) {
+  if (isCupImage(event)) {
     const cupImage = event.target;
     const resultToken = determineToken(event.target.id);
     console.log(resultToken);
@@ -19,12 +19,16 @@ document.addEventListener("click", function (event) {
   }
 });
 
-function determineToken(eventID) {
-  if (eventID === "cup1-image") {
+function isCupImage(event) {
+  return event.target.matches(".cup-image");
+}
+
+function determineToken(cupId) {
+  if (cupId === "cup1-image") {
     return cup1.resultToken;
-  } else if (eventID === "cup2-image") {
+  } else if (cupId === "cup2-image") {
     return cup2.resultToken;
-  } else if (eventID === "cup3-image") {
+  } else if (cupId === "cup3-image") {
     return cup3.resultToken;
   }
 }
