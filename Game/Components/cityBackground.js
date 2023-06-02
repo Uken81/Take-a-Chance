@@ -7,8 +7,8 @@ const backgrounds = [
   "url(../../Assets/CityImg/city6.jpg)",
   "url(../../Assets/CityImg/city7.jpg)",
 ];
-const button = document.getElementById("location");
-const backgroundCity = document.getElementById("background-city");
+const button = document.getElementById("location-setter");
+const backgroundCity = document.querySelector(".action-container");
 backgroundCity.style.backgroundImage = "url(../../Assets/CityImg/city1.jpg)";
 
 let index = 0;
