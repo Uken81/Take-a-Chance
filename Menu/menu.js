@@ -1,9 +1,5 @@
-//not working
 document.addEventListener("DOMContentLoaded", storeDifficulty("easy"));
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("loaded");
-  // initaliseCashDisplays();
-});
+
 const instructionsContainer = document.getElementById("instructions-container");
 const instructionsButton = document.getElementById("open-instructions");
 instructionsButton.addEventListener("click", function () {
@@ -18,14 +14,14 @@ closeInstructionsButton.addEventListener("click", function () {
 const difficultyContainer = document.getElementById("difficulty-container");
 const difficultyButton = document.getElementById("difficulty-selector");
 difficultyButton.addEventListener("click", function () {
-  if (difficultyContainer.style.display === "none") {
+  if (getComputedStyle(difficultyContainer).display === "none") {
     difficultyContainer.style.display = "flex";
   } else {
     difficultyContainer.style.display = "none";
   }
 });
 
-//code duplication
+//ToDo: Fix code duplication
 const setEasyButton = document.getElementById("easy");
 setEasyButton.addEventListener("click", function () {
   storeDifficulty("easy");
