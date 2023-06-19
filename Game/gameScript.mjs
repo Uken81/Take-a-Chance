@@ -3,11 +3,6 @@ import { checkEndGame } from "../endGame/endGame.js";
 import { player } from "./Common/player.mjs";
 import { adjustPlayersBank } from "./Components/playersBank.js";
 
-window.addEventListener("load", function () {
-  placeTokens();
-  console.log("loaded");
-});
-
 function isCupImage(event) {
   return event.target.matches(".cup-image");
 }
@@ -19,14 +14,18 @@ document.addEventListener("click", function (event) {
 });
 
 function runGameRound(event) {
+  placeTokens();
   runAnimation(event);
   applyRoundResults(event);
   adjustPlayersBank();
-  placeTokens();
   checkEndGame();
+  console.log("cup1Game", cup1);
+  console.log("cup2Game", cup2);
+  console.log("cup3Game", cup3);
 }
 
 function runAnimation(event) {
+  console.log("runAnimation");
   const allCupImages = document.querySelectorAll(".cups");
   const cupImage = event.target;
 
@@ -47,6 +46,7 @@ function restorePointers(element) {
 }
 
 function applyRoundResults(event) {
+  console.log("applyRoundResults");
   const selectedCupToken = determineToken(event.target.id);
   const isWinner = determineIfWinner(selectedCupToken);
 
@@ -55,6 +55,11 @@ function applyRoundResults(event) {
 }
 
 function determineToken(selectedCupId) {
+  const cup = document.getElementById("selectedCupId");
+  console.log("selectedCupId", selectedCupId);
+  console.log("token1", cup1.resultToken);
+  console.log("token2", cup2.resultToken);
+  console.log("token3", cup3.resultToken);
   if (selectedCupId === "cup1-image") {
     return cup1.resultToken;
   } else if (selectedCupId === "cup2-image") {
@@ -84,4 +89,5 @@ function setWinProperty(isWinner) {
 function displayResult(isWinner) {
   const resultDisplay = document.getElementById("result-display");
   resultDisplay.innerText = isWinner ? "You have won" : "You have lost";
+  console.log("iswinner", isWinner);
 }

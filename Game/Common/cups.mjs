@@ -17,11 +17,13 @@ const cup2 = createCup();
 const cup3 = createCup();
 
 export function placeTokens() {
+  console.log("placeTokens");
   calculateTokenOrder();
-  ApplyTokenBackgrounds();
+  setTokenBackgrounds();
 }
 
 function calculateTokenOrder() {
+  console.log("calculateTokenOrder");
   const ballPosition = generateRandomNumber();
   if (ballPosition === 0) {
     setOutcome1();
@@ -39,27 +41,27 @@ function generateRandomNumber() {
 
 //code duplication. Look for alternative
 function setOutcome1() {
-  setCupProperties(cup1, "ball");
-  setCupProperties(cup2, "hobo");
-  setCupProperties(cup3, "crab");
+  setTokenProperties(cup1, "ball");
+  setTokenProperties(cup2, "hobo");
+  setTokenProperties(cup3, "crab");
 }
 function setOutcome2() {
-  setCupProperties(cup1, "crab");
-  setCupProperties(cup2, "ball");
-  setCupProperties(cup3, "hobo");
+  setTokenProperties(cup1, "crab");
+  setTokenProperties(cup2, "ball");
+  setTokenProperties(cup3, "hobo");
 }
 function setOutcome3() {
-  setCupProperties(cup1, "hobo");
-  setCupProperties(cup2, "crab");
-  setCupProperties(cup3, "ball");
+  setTokenProperties(cup1, "hobo");
+  setTokenProperties(cup2, "crab");
+  setTokenProperties(cup3, "ball");
 }
 
-function setCupProperties(cup, resultToken) {
+function setTokenProperties(cup, resultToken) {
   cup.setResultToken(resultToken);
   cup.setTokenImg(resultToken);
 }
 
-function ApplyTokenBackgrounds() {
+function setTokenBackgrounds() {
   const cup1Container = document.getElementById("cup1-container");
   const cup2Container = document.getElementById("cup2-container");
   const cup3Container = document.getElementById("cup3-container");
