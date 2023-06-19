@@ -1,5 +1,9 @@
+//not working
 document.addEventListener("DOMContentLoaded", storeDifficulty("easy"));
-
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("loaded");
+  // initaliseCashDisplays();
+});
 const instructionsContainer = document.getElementById("instructions-container");
 const instructionsButton = document.getElementById("open-instructions");
 instructionsButton.addEventListener("click", function () {

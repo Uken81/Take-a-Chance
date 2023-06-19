@@ -13,6 +13,7 @@
     <script type="module" src="./Common/cups.mjs" async></script>
     <script type="module" src="./Common/tokens.mjs" async></script>
     <script type="module" src="./Components/betting.js" async></script>
+    <script type="module" src="./Components/playersBank.js" async></script>
     <script
       type="text/javascript"
       src="./Components/cityBackground.js"
@@ -70,15 +71,14 @@
           <p id="result-display"></p>
         </div>
         <div class="bank">
-          <p id="cash">You have $40 remaining</p>
+          <p id="cash"></p>
           <meter
             id="meter"
             min="0"
-            max="100"
-            value="75"
-            low="33"
-            high="66"
-            optimum="50"
+            max="0"
+            value="0"
+            low="0"
+            optimum="0"
           ></meter>
         </div>
       </div>

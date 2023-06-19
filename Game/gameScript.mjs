@@ -14,14 +14,15 @@ document.addEventListener("click", function (event) {
 });
 
 function runGameRound(event) {
+  console.log(player.bank);
   placeTokens();
   runAnimation(event);
   applyRoundResults(event);
   adjustPlayersBank();
   checkEndGame();
-  console.log("cup1Game", cup1);
-  console.log("cup2Game", cup2);
-  console.log("cup3Game", cup3);
+  // console.log("cup1Game", cup1);
+  // console.log("cup2Game", cup2);
+  // console.log("cup3Game", cup3);
 }
 
 function runAnimation(event) {
