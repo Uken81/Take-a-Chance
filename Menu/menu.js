@@ -21,6 +21,7 @@ difficultyButton.addEventListener("click", function () {
   }
 });
 
+//code duplication
 const setEasyButton = document.getElementById("easy");
 setEasyButton.addEventListener("click", function () {
   storeDifficulty("easy");

@@ -1,4 +1,5 @@
 import { player } from "../Game/Common/player.mjs";
+import { calculateWinCondition } from "../Game/Common/winCondition.js";
 
 export function checkEndGame() {
   const gameState = checkConditions();
@@ -18,29 +19,13 @@ function redirectEndGame() {
 function checkConditions() {
   const bank = player.bank;
   const winCondition = calculateWinCondition();
+  console.log("winCondition", winCondition);
   if (bank <= 0) {
     return "lose";
   } else if (bank >= winCondition) {
     return "win";
   } else {
     return "continue";
-  }
-}
-
-function calculateWinCondition() {
-  const difficulty = localStorage.getItem("difficulty");
-
-  switch (difficulty) {
-    case "easy":
-      return 80;
-
-    case "medium":
-      return 200;
-
-    case "hard":
-      return 400;
-    default:
-      return 80;
   }
 }
 
