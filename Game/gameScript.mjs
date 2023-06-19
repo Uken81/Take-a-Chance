@@ -1,73 +1,87 @@
-import { cup1, cup2, cup3 } from "../Game/Common/cups.mjs";
+import { cup1, cup2, cup3, placeTokens } from "../Game/Common/cups.mjs";
 import { checkEndGame } from "../endGame/endGame.js";
 import { player } from "./Common/player.mjs";
 import { adjustPlayersBank } from "./Components/playersBank.js";
 
-document.addEventListener("click", function (event) {
-  console.log(event.target);
-  console.log(event.target.id);
-  if (isCupImage(event)) {
-    const cupImage = event.target;
-    const resultToken = determineToken(event.target.id);
-    console.log(resultToken);
-    console.log(cupImage);
-
-    runAnimation(cupImage);
-    determineIfWinner(resultToken);
-    adjustPlayersBank();
-    checkEndGame();
-  }
+window.addEventListener("load", function () {
+  placeTokens();
+  console.log("loaded");
 });
 
 function isCupImage(event) {
   return event.target.matches(".cup-image");
 }
 
-function determineToken(cupId) {
-  if (cupId === "cup1-image") {
-    return cup1.resultToken;
-  } else if (cupId === "cup2-image") {
-    return cup2.resultToken;
-  } else if (cupId === "cup3-image") {
-    return cup3.resultToken;
+document.addEventListener("click", function (event) {
+  if (isCupImage(event)) {
+    runGameRound(event);
   }
+});
+
+function runGameRound(event) {
+  runAnimation(event);
+  applyRoundResults(event);
+  adjustPlayersBank();
+  placeTokens();
+  checkEndGame();
 }
 
-const allCupElements = document.querySelectorAll(".cups");
-function runAnimation(cupElement) {
-  cupElement.style.animationName = "liftcup";
-  //refactor pointer actions in functions
-  allCupElements.forEach(removePointers);
-  cupElement.onanimationend = function () {
-    cupElement.style.animationName = "";
-    // ballPlacement();
-    allCupElements.forEach(restorePointers);
+function runAnimation(event) {
+  const allCupImages = document.querySelectorAll(".cups");
+  const cupImage = event.target;
+
+  cupImage.style.animationName = "liftcup";
+  allCupImages.forEach(removePointers);
+  cupImage.onanimationend = function () {
+    cupImage.style.animationName = "";
+    allCupImages.forEach(restorePointers);
   };
+}
+
+function removePointers(element) {
+  element.style.pointerEvents = "none";
+}
+
+function restorePointers(element) {
+  element.style.pointerEvents = "";
+}
+
+function applyRoundResults(event) {
+  const selectedCupToken = determineToken(event.target.id);
+  const isWinner = determineIfWinner(selectedCupToken);
+
+  setWinProperty(isWinner);
+  displayResult(isWinner);
+}
+
+function determineToken(selectedCupId) {
+  if (selectedCupId === "cup1-image") {
+    return cup1.resultToken;
+  } else if (selectedCupId === "cup2-image") {
+    return cup2.resultToken;
+  } else if (selectedCupId === "cup3-image") {
+    return cup3.resultToken;
+  }
 }
 
 function determineIfWinner(resultToken) {
   console.log(resultToken);
   if (resultToken === "ball") {
-    player.setHasWon(true);
-    //delete before commit and below
-    const hasWon = player.hasWonRound;
-    console.log("winner?", hasWon);
+    return true;
   } else {
-    player.setHasWon(false);
-    const hasWon = player.hasWonRound;
-    console.log("winner?", hasWon);
+    return false;
   }
 }
 
-//removes the cup images to display win/lose screen.
-function removeCups(element) {
-  element.style.display = "none";
+function setWinProperty(isWinner) {
+  if (isWinner) {
+    player.setHasWon(true);
+  } else {
+    player.setHasWon(false);
+  }
 }
-//prevents cups from being clicked again until animation is finished.
-function removePointers(element) {
-  element.style.pointerEvents = "none";
-}
-//allows cups to be clicked again
-function restorePointers(element) {
-  element.style.pointerEvents = "";
+
+function displayResult(isWinner) {
+  const resultDisplay = document.getElementById("result-display");
+  resultDisplay.innerText = isWinner ? "You have won" : "You have lost";
 }

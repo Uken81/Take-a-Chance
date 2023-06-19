@@ -6,8 +6,6 @@ export function adjustPlayersBank() {
 }
 
 function modifyValue() {
-  const playersBank = player.bank;
-  const bet = player.bet;
   const hasWon = player.hasWonRound;
 
   if (hasWon === true) {

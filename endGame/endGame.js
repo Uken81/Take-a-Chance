@@ -12,7 +12,7 @@ export function checkEndGame() {
 }
 
 function redirectEndGame() {
-  window.location.replace("./endGame/endGame.html");
+  window.location.replace("../EndGame/endGame.html");
 }
 
 function checkConditions() {

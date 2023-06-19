@@ -1,6 +1,4 @@
-const createCup = ({ name }) => ({
-  //remove name??
-  name,
+const createCup = () => ({
   resultToken: "",
   tokenImg: "",
 
@@ -14,26 +12,28 @@ const createCup = ({ name }) => ({
   },
 });
 
-const cup1 = createCup({ name: "cup1" });
-const cup2 = createCup({ name: "cup2" });
-const cup3 = createCup({ name: "cup3" });
+const cup1 = createCup();
+const cup2 = createCup();
+const cup3 = createCup();
 
-//Todo: move this gamescript.js
-placeTokens();
+export function placeTokens() {
+  calculateTokenOrder();
+  ApplyTokenBackgrounds();
+}
 
-function placeTokens() {
-  const ballPosition = determineBallPosition();
+function calculateTokenOrder() {
+  const ballPosition = generateRandomNumber();
   if (ballPosition === 0) {
     setOutcome1();
   } else if (ballPosition === 1) {
     setOutcome2();
-  } else {
+  } else if (ballPosition === 3) {
     setOutcome3();
   }
   console.log("cups", cup1, cup2, cup3);
 }
 
-function determineBallPosition() {
+function generateRandomNumber() {
   return Math.floor(Math.random() * 3);
 }
 
@@ -57,6 +57,16 @@ function setOutcome3() {
 function setCupProperties(cup, resultToken) {
   cup.setResultToken(resultToken);
   cup.setTokenImg(resultToken);
+}
+
+function ApplyTokenBackgrounds() {
+  const cup1Container = document.getElementById("cup1-container");
+  const cup2Container = document.getElementById("cup2-container");
+  const cup3Container = document.getElementById("cup3-container");
+
+  cup1Container.style.backgroundImage = cup1.tokenImg;
+  cup2Container.style.backgroundImage = cup2.tokenImg;
+  cup3Container.style.backgroundImage = cup3.tokenImg;
 }
 
 export { cup1, cup2, cup3 };
