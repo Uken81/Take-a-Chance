@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .game-container {
   display: flex;
   flex-direction: column;
@@ -75,6 +80,11 @@
   font-size: 2em;
 }
 
+.round-result {
+  font-size: 4rem;
+  font-family: "Pangolin", cursive;
+}
+
 .bet {
   display: flex;
   flex-direction: column;
@@ -100,4 +110,17 @@
 
 #location-setter {
   display: none;
+}
+
+button {
+  height: 50px;
+  width: 150px;
+  border-radius: 16px;
+  background-color: black;
+  color: white;
+  font-size: 1.1em;
+  text-shadow: 3px 2px 3px rgb(116, 22, 22);
+  outline: none;
+  text-decoration: none;
+  padding: 10px;
 }

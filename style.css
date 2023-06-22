@@ -3,17 +3,17 @@
   padding: 0;
 }
 
-/* body {
-  text-align: center;
+body {
+  /* text-align: center;
   background: radial-gradient(
       90% 60% at 50% 80%,
       rgba(255, 255, 255, 0) 60%,
       #000851 93.7%
     ),
-    no-repeat #1cb5e0;
+    no-repeat #1cb5e0; */
   max-height: 100%;
-  overflow-y: scroll;
-} */
+  overflow-x: scroll;
+}
 
 /* .menu-container {
   display: flex;
