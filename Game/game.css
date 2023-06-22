@@ -5,9 +5,12 @@
 
 .game-container {
   display: flex;
+  align-items: center;
   flex-direction: column;
   height: 100vh;
   text-align: center;
+  overflow: hidden;
+  padding: 5%;
 
   background: rgb(2, 0, 36);
   background: radial-gradient(
@@ -22,8 +25,7 @@
   display: flex;
   justify-content: space-evenly;
   height: 50vh;
-  width: 80vw;
-  margin: auto;
+  width: 60vw;
   background-color: azure;
   border: solid 6px black;
   background-repeat: no-repeat;
@@ -31,6 +33,7 @@
 }
 
 .cups {
+  /* height: 50%; */
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: bottom;
@@ -70,8 +73,7 @@
 
 .player-dashboard {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   height: 100%;
   margin: 0, 10%;
@@ -81,8 +83,11 @@
 }
 
 .round-result {
+  position: absolute;
   font-size: 4rem;
   font-family: "Pangolin", cursive;
+  color: whitesmoke;
+  /* min-width: 20%; */
 }
 
 .bet {
