@@ -37,12 +37,22 @@
   font-size: 1.5em;
 }
 
+#intro-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
 #difficulty-container {
   display: none;
   flex-direction: column;
+  position: fixed;
+  margin-top: 20%;
 }
 
-.difficulty {
+.difficulty-button {
   margin-top: 5%;
   font-size: medium;
 }
@@ -70,8 +80,4 @@ a {
 
 a:link {
   text-decoration: none;
-}
-
-#intro-buttons {
-  margin-top: 10%;
 }
